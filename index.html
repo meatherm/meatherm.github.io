@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-solution-cf-1329a" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/08/solution-cf-1329a/" class="article-date">
-  <time datetime="2020-04-08T06:40:03.552Z" itemprop="datePublished">2020-04-08</time>
+    <a href="/2020/04/08/hello-world/" class="article-date">
+  <time datetime="2020-04-08T04:54:43.684Z" itemprop="datePublished">2020-04-08</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/solution-cf-1329a/">Codeforces 1329 A ���</a>
+      <a class="article-title" href="/2020/04/08/hello-world/">Hello World</a>
     </h1>
   
 
@@ -86,55 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>�����ж��޽⡣</p>
-<p>�� $\sum{l_i} \leq m$ ��ʱ����Ȼ���޽�ġ������׺�������һ���޽����������� $n=5,l=[3,3,4]$����Ҳ���޽�ģ���Ϊ����ǰ������ɫֻˢһ��λ�ã��ֵ���������ɫ��ʱ����ʼλ��ҲӦ���� $3$������ $3$ ��ʼ��ˢ $4$ ����Ȼ������ $n$���������⡣����������� $i$ ���� $i+l_i-1&gt;n$��Ҳ�޽⡣</p>
-<p>�ж����޽�֮�����ǿ�������ڲ��غϵ������ˢ������ $m$ ����ɫ�����˶��ٸ񣬼� $\sum l_i -n$������ $ret$��Ȼ�����ǿ��ǽ���һ����ɫ����ʼλ����ǰ�ƣ�������һ���� $ret$ ��ֱ�� $ret=0$��</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> rr register</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100010</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> l[N];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> ans[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res,f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;</span><br><span class="line">	res=c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">		res=res*<span class="number">10</span>+c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">return</span> res*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	n=read(),m=read();</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">		l[i]=read();</span><br><span class="line">		sum+=l[i];</span><br><span class="line">		<span class="keyword">if</span>(i+l[i]<span class="number">-1</span>&gt;n)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(sum&lt;n)&#123; </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ret=sum-n,last=<span class="number">1</span>; <span class="comment">// last ����һ���ŵ�λ�� ��Ϊ��һ����ɫһ������ 1 ���� last = 1</span></span><br><span class="line">	ans[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=m;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ret&gt;=(l[i<span class="number">-1</span>]<span class="number">-1</span>))&#123; <span class="comment">// ע�� ���ֻ����ǰŲ (l[i-1]+1) �� ��ɫ i-1 ����Ҫ�� 1 ��</span></span><br><span class="line">			ret-=(l[i<span class="number">-1</span>]<span class="number">-1</span>);<span class="comment">// ��ȥ ret</span></span><br><span class="line">			ans[i]=last+<span class="number">1</span>;</span><br><span class="line">			++last;<span class="comment">// ���� last</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			last=last+l[i<span class="number">-1</span>]-ret; <span class="comment">// ��� ret ���� (l[i-1]+1) �����ֻ����ǰŲ ret �� ��˳�ְ� ret ����</span></span><br><span class="line">			ret=<span class="number">0</span>;</span><br><span class="line">			ans[i]=last;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%I64d "</span>,ans[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://meatherm.github.io/2020/04/08/solution-cf-1329a/" data-id="ck8r1pblv000130b12ieyadbu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello,world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/01/hello,world/" class="article-date">
-  <time datetime="2020-03-01T10:32:27.839Z" itemprop="datePublished">2020-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/hello,world/">博客搭建成功！</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在折腾了一个上午之后终于算是搭建了自己的博客。</p>
-<p>不得不说这玩意有点毒瘤。</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n} \prod_{i=1}^{m} a_{i,j}</script><p><del>测试一下 Markdown</del></p>
-<p><strong>这还是测试 Markdown</strong></p>
-<p>$\texttt{LaTeX 真好玩}$</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://meatherm.github.io/2020/03/01/hello,world/" data-id="ck8r1pblo000030b121xp3o7q" class="article-share-link">Share</a>
+      <a data-url="https://meatherm.github.io/2020/04/08/hello-world/" data-id="ck8sbjkgm0000bsb1cc4va8px" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +127,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
     </div>
   </div>
 
@@ -175,11 +140,7 @@
       <ul>
         
           <li>
-            <a href="/2020/04/08/solution-cf-1329a/">Codeforces 1329 A ���</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/01/hello,world/">博客搭建成功！</a>
+            <a href="/2020/04/08/hello-world/">Hello World</a>
           </li>
         
       </ul>
