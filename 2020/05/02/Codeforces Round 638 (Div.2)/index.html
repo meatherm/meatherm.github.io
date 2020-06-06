@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Codeforces Round 638 (Div.2) Solution (Problem A ~ Problem D) | Meatherm 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="跟我一起大喊：kimo！ 毒瘤场。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 638 (Div.2) Solution (Problem A ~ Problem D)">
+<meta property="og:url" content="https://meatherm.github.io/2020/05/02/Codeforces%20Round%20638%20(Div.2)/index.html">
+<meta property="og:site_name" content="Meatherm 的博客">
+<meta property="og:description" content="跟我一起大喊：kimo！ 毒瘤场。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-02T05:23:52.508Z">
+<meta property="article:modified_time" content="2020-06-06T05:10:09.533Z">
+<meta property="article:author" content="Meatherm">
+<meta property="article:tag" content="比赛记录">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Meatherm 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Meatherm 的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://meatherm.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Codeforces Round 638 (Div.2)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/02/Codeforces%20Round%20638%20(Div.2)/" class="article-date">
+  <time datetime="2020-05-02T05:23:52.508Z" itemprop="datePublished">2020-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Codeforces Round 638 (Div.2) Solution (Problem A ~ Problem D)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>跟我一起大喊：kimo！</p>
+<p>毒瘤场。</p>
+<a id="more"></a>
+<h3 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h3><p><strong>题意</strong>：</p>
+<p>将 $n$ 个正整数 $2^1,2^2,…,2^n$ 分成两组，每组数的个数相同，求两组数和的最小差。</p>
+<p>$1 \leq n \leq 30,2|n$</p>
+<p><strong>做法</strong>：</p>
+<p>我也不知道怎么做。</p>
+<p>手玩了一下，答案是 $2^{\frac n2+1}+2$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> rr</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100010</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res,f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;</span><br><span class="line">	res=c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">		res=res*<span class="number">10</span>+c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">return</span> res*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T=read();</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="keyword">int</span> n=read(),a=<span class="number">0</span>,b=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(<span class="number">1</span>&lt;&lt;(n/<span class="number">2</span>+<span class="number">1</span>))<span class="number">-2</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Problem-B"><a href="#Problem-B" class="headerlink" title="Problem B"></a>Problem B</h3><p><strong>题意</strong>：</p>
+<p>有一个长为 $n$ 的数组 $a$。你需要在数组中插入至多 $10^4$ 个元素，使得该数组任意长为 $k$ 的子数组之和都相同。</p>
+<p>$1 \leq k \leq n \leq 100,1 \leq a_i \leq n$</p>
+<p><strong>做法</strong>：</p>
+<p>显然，当最终数组是一个长为 $k$ 的数组循环而成的，那么该数组任意长为 $k$ 的子数组之和都相同。</p>
+<p>设数组 $b$ 为 $a$ 中元素去重之后的数组，其长度为 $m$。如果 $m&gt;k$，那我们显然无法构造出这样的数组 —— 因为让 $b$ 中元素都出现一次至少需要 $m$ 的长度，已经大于循环节长度 $k$。</p>
+<p>如果 $m&lt;k$，可以在 $b$ 的末尾补上任意数，使其长度变为 $k$。赛时代码中写的是循环补充，例如 $b=[2,3,1],k=9$ 时，补足后的 $b$ 变为 $b=[2,3,1,2,3,1,2,3,1]$。</p>
+<p>最后将 $b$ 循环输出 $n$ 次即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> rr</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100010</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> b[N],len;</span><br><span class="line"><span class="keyword">int</span> v[N],size;</span><br><span class="line"><span class="keyword">int</span> cnt[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res,f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;</span><br><span class="line">	res=c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">		res=res*<span class="number">10</span>+c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">return</span> res*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T=read();</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		n=read(),m=read();	</span><br><span class="line">		<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">			a[i]=read();</span><br><span class="line">			v[i]=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">std</span>::sort(v+<span class="number">1</span>,v+<span class="number">1</span>+n);</span><br><span class="line">		<span class="keyword">if</span>((size=<span class="built_in">std</span>::unique(v+<span class="number">1</span>,v+<span class="number">1</span>+n)-(v+<span class="number">1</span>))&gt;m)&#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n*m);</span><br><span class="line">		<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">			<span class="keyword">for</span>(rr <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;++j)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d "</span>,v[(j<span class="number">-1</span>)%size+<span class="number">1</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">		End:;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Problem-C"><a href="#Problem-C" class="headerlink" title="Problem C"></a>Problem C</h3><p><strong>题意</strong>：</p>
+<p>给定一个长度为 $n$ 的字符串 $s$。你需要把这个字符串中的字符重新分配给 $k$ 个字符串（不能有空字符串），使得字典序最大的字符串最小。求出最优情况下，字典序最大的字符串。</p>
+<p>对于字符串 $x,y$，$x$ 的字典序 $&lt;y$ 当且仅当满足以下条件至少一个：</p>
+<ul>
+<li>$x$ 是 $y$ 的前缀</li>
+<li>$\exists 1 \leq i \leq \min\{|x|,|y|\}$，使得 $x_i&lt;y_i$</li>
+</ul>
+<p>$1 \leq k \leq n \leq 10^5$。</p>
+<p><strong>做法</strong>：</p>
+<p>容易想到把字典序前 $k$ 小的字符拿出来当作每个字符串的第一个字符。</p>
+<p>此时若每个字符串的第一个字符不同，则我们把剩下的部分全部接到字典序最小的字符串后，答案是字典序最大的那个字符。</p>
+<p>若每个字符串的第一个字符相同，则分两种情况讨论：</p>
+<ul>
+<li><p>剩下一种字符</p>
+<p>将它均匀分配给每个字符串。</p>
+</li>
+<li><p>剩下超过一种字符</p>
+<p>将这些字符按照字典序从小到大接在任意字符串后，答案就是它。</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> rr</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100010</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res,f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;</span><br><span class="line">	res=c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">		res=res*<span class="number">10</span>+c<span class="number">-48</span>;</span><br><span class="line">	<span class="keyword">return</span> res*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T=read();</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		n=read(),k=read();</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">		<span class="built_in">memset</span>(cnt,<span class="number">0</span>,<span class="keyword">sizeof</span>(cnt));</span><br><span class="line">		<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">			++cnt[s[i]-<span class="string">'a'</span>+<span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">string</span> x=<span class="string">""</span>;</span><br><span class="line">		<span class="keyword">int</span> rt=k;</span><br><span class="line">		<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!cnt[i])&#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(cnt[i]&gt;=rt)&#123;</span><br><span class="line">				x+=(<span class="keyword">char</span>)(i+<span class="string">'a'</span><span class="number">-1</span>);</span><br><span class="line">				cnt[i]-=rt;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				rt-=cnt[i];</span><br><span class="line">				cnt[i]=<span class="number">0</span>;</span><br><span class="line">				flag=<span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;x;</span><br><span class="line">		<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(cnt[i])&#123;</span><br><span class="line">				++tot;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="keyword">if</span>(tot==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;++i)&#123;</span><br><span class="line">				<span class="keyword">while</span>(cnt[i]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">					<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;(<span class="keyword">char</span>)(i+<span class="string">'a'</span><span class="number">-1</span>);</span><br><span class="line">					cnt[i]-=k;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">for</span>(rr <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;++i)&#123;</span><br><span class="line">				<span class="keyword">while</span>(cnt[i]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">					<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;(<span class="keyword">char</span>)(i+<span class="string">'a'</span><span class="number">-1</span>);</span><br><span class="line">					--cnt[i];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://meatherm.github.io/2020/05/02/Codeforces%20Round%20638%20(Div.2)/" data-id="ckb36mm9j0000d0b194dv8rv9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" rel="tag">比赛记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/02/Codeforces%20Round%20637%20(Div.2)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Codeforces Round 637 (Div.2) Solution (Problem A ~ Problem D)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" rel="tag">比赛记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">比赛记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/02/Codeforces%20Round%20638%20(Div.2)/">Codeforces Round 638 (Div.2) Solution (Problem A ~ Problem D)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/02/Codeforces%20Round%20637%20(Div.2)/">Codeforces Round 637 (Div.2) Solution (Problem A ~ Problem D)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/16/Codeforces%20Round%20635%20(Div.2)/">Codeforces Round 635 (Div.2) Solution (Problem A ~ Problem D)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/09/Codeforces%20Round%20632%20(Div.2)/">Codeforces Round 632 (Div.2) Solution (Problem A ~ Problem D)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Meatherm<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
